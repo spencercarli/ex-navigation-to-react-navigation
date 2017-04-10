@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Button } from 'react-native';
+import { Text, Button, Platform } from 'react-native';
 import Container from '../components/Container';
 
 class Screen extends Component {
@@ -10,7 +10,7 @@ class Screen extends Component {
   }
 
   handleAlert = () => {
-    this.props.navigator.showLocalAlert('Alertin the alerters', {
+    this.props.navigator.showLocalAlert('Alerts are useful', {
       text: { color: '#fff' },
       container: { backgroundColor: '#F44336' },
     });
@@ -25,7 +25,7 @@ class Screen extends Component {
         <Button
           title="Alert the Thing"
           onPress={this.handleAlert}
-          color="#fff"
+          color={Platform.OS === 'ios' ? '#fff' : null}
         />
       </Container>
     );
