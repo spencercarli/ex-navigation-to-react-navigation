@@ -14,11 +14,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const Container = ({ backgroundColor, onPress }) => (
+const Container = ({ backgroundColor, onPress, children }) => (
   <View style={[styles.container, { backgroundColor }]}>
     <TouchableOpacity onPress={onPress}>
       <Text style={styles.text}>{backgroundColor}</Text>
     </TouchableOpacity>
+    {children}
   </View>
 );
 
