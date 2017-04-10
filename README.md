@@ -9,4 +9,7 @@ A demonstration of converting an app that uses Ex-Navigation to React Navigation
   - Passing params
 - [ ] TabNavigation to TabNavigator
 - [ ] DrawerNavigation to DrawerNavigator
-- [ ] Handling alerts
+- [x] Handling alerts
+
+## Example Migrations
+- [Managing Alerts](https://github.com/spencercarli/ex-navigation-to-react-navigation/compare/replace-alert)
