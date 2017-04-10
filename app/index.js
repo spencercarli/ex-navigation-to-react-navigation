@@ -5,17 +5,20 @@ import { NavigationProvider } from '@expo/ex-navigation';
 import Tabs from './layouts/Tabs';
 import Drawer from './layouts/Drawer';
 import { Router } from './config/router';
+import { AlertProvider } from './components/Alert';
 
 const App = () => (
-  <NavigationProvider router={Router}>
-    <View style={{ flex: 1 }}>
-      <StatusBar
-        backgroundColor="#fff"
-        barStyle="dark-content"
-      />
-       {Platform.OS === 'ios' ? <Tabs /> : <Drawer />}
-    </View>
-  </NavigationProvider>
+  <AlertProvider>
+    <NavigationProvider router={Router}>
+      <View style={{ flex: 1 }}>
+        <StatusBar
+          backgroundColor="#fff"
+          barStyle="dark-content"
+        />
+         {Platform.OS === 'ios' ? <Tabs /> : <Drawer />}
+      </View>
+    </NavigationProvider>
+  </AlertProvider>
 );
 
 

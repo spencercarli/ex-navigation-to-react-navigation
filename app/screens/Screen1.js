@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Text, Button, Platform } from 'react-native';
+
 import Container from '../components/Container';
+import { connectAlert } from '../components/Alert';
 
 class Screen extends Component {
   static route = {
@@ -10,10 +12,7 @@ class Screen extends Component {
   }
 
   handleAlert = () => {
-    this.props.navigator.showLocalAlert('Alerts are useful', {
-      text: { color: '#fff' },
-      container: { backgroundColor: '#F44336' },
-    });
+    this.props.alertWithType('info', 'Hey!', 'Alerting peopleis useful.');
   }
 
   render() {
@@ -32,4 +31,4 @@ class Screen extends Component {
   }
 }
 
-export default Screen;
+export default connectAlert(Screen);
