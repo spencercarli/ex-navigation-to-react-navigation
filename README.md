@@ -1,12 +1,13 @@
 A demonstration of converting an app that uses Ex-Navigation to React Navigation.
 
 ## TODO
-- [ ] Replacing/removing the Provider
-  - Replacing it with a root navigator (stack navigator?)
 - [ ] StackNavigation to StackNavigator
   - Navbar
   - Routing between screens
   - Passing params
 - [ ] TabNavigation to TabNavigator
 - [ ] DrawerNavigation to DrawerNavigator
-- [ ] Handling alerts
+- [x] Handling alerts
+
+## Example Migrations
+- [Managing Alerts](https://github.com/spencercarli/ex-navigation-to-react-navigation/compare/replace-alert)
