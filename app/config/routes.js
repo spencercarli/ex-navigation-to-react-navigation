@@ -1,5 +1,6 @@
 import React from 'react';
-import { StackNavigator, TabNavigator } from 'react-navigation';
+import { Platform } from 'react-native';
+import { StackNavigator, TabNavigator, DrawerNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import Screen1 from '../screens/Screen1';
@@ -13,9 +14,30 @@ import Screen8 from '../screens/Screen8';
 import Screen9 from '../screens/Screen9';
 import Screen10 from '../screens/Screen10';
 
+const DrawerIcon = ({ navigate }) => {
+  if (Platform.OS === 'ios') {
+    return null;
+  }
+
+  return (
+    <Icon 
+      name="md-menu" 
+      size={28} 
+      color="black" 
+      onPress={() => navigate('DrawerOpen')}
+      style={{ paddingLeft: 20 }}
+    />
+  );
+}
+
 export const Stack1 = StackNavigator({
   Screen1: {
     screen: Screen1,
+    navigationOptions: {
+      header: (props) => ({
+        left: <DrawerIcon {...props} />,
+      }),
+    },
   },
   Screen2: {
     screen: Screen2,
@@ -28,6 +50,11 @@ export const Stack1 = StackNavigator({
 export const Stack2 = StackNavigator({
   Screen4: {
     screen: Screen4,
+    navigationOptions: {
+      header: (props) => ({
+        left: <DrawerIcon {...props} />,
+      }),
+    },
   },
   Screen5: {
     screen: Screen5,
@@ -43,6 +70,11 @@ export const Stack2 = StackNavigator({
 export const Stack3 = StackNavigator({
   Screen8: {
     screen: Screen8,
+    navigationOptions: {
+      header: (props) => ({
+        left: <DrawerIcon {...props} />,
+      }),
+    },
   },
   Screen9: {
     screen: Screen9,
@@ -80,6 +112,33 @@ export const Tabs = TabNavigator({
         label: 'Analytics',
         icon: ({ tintColor }) => 
           <Icon name="ios-analytics-outline" size={32} color={tintColor} />,
+      },
+    },
+  },
+});
+
+export const Drawer = DrawerNavigator({
+  Home: {
+    screen: Stack1,
+    navigationOptions: {
+      drawer: {
+        label: 'Home',
+      },
+    },
+  },
+  Camera: {
+    screen: Stack2,
+    navigationOptions: {
+      drawer: {
+        label: 'Camera',
+      },
+    },
+  },
+  Analytics: {
+    screen: Stack3,
+    navigationOptions: {
+      drawer: {
+        label: 'Analytics',
       },
     },
   },
