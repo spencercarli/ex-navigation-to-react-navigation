@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { StatusBar, View, Platform } from 'react-native';
-import { NavigationProvider } from '@expo/ex-navigation';
+import { NavigationProvider, createRouter } from '@expo/ex-navigation';
 
 import Tabs from './layouts/Tabs';
 import Drawer from './layouts/Drawer';
-import { Router } from './config/router';
+
+const Router = createRouter(() => ({}));
 
 const App = () => (
   <NavigationProvider router={Router}>

@@ -3,17 +3,15 @@ import { Text } from 'react-native';
 import Container from '../components/Container';
 
 class Screen extends Component {
-  static route = {
-    navigationBar: {
-      title: 'Screen #6',
-    }
+  static navigationOptions = {
+    title: 'Screen #6',
   }
 
   render() {
     return (
       <Container
         backgroundColor="#58960c"
-        onPress={() => this.props.navigator.push('screen7')}
+        onPress={() => this.props.navigation.navigate('Screen7')}
       />
     );
   }
