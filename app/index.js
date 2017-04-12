@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StatusBar, View, Platform } from 'react-native';
 import { NavigationProvider, createRouter } from '@expo/ex-navigation';
 
-import Tabs from './layouts/Tabs';
+import { Tabs } from './config/routes';
 import Drawer from './layouts/Drawer';
 import { AlertProvider } from './components/Alert';
 

@@ -1,4 +1,6 @@
-import { StackNavigator } from 'react-navigation';
+import React from 'react';
+import { StackNavigator, TabNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import Screen1 from '../screens/Screen1';
 import Screen2 from '../screens/Screen2';
@@ -47,5 +49,38 @@ export const Stack3 = StackNavigator({
   },
   Screen10: {
     screen: Screen10,
+  },
+});
+
+export const Tabs = TabNavigator({
+  Home: {
+    screen: Stack1,
+    navigationOptions: {
+      tabBar: {
+        label: 'Home',
+        icon: ({ tintColor }) => 
+          <Icon name="ios-albums-outline" size={32} color={tintColor} />,
+      },
+    },
+  },
+  Camera: {
+    screen: Stack2,
+    navigationOptions: {
+      tabBar: {
+        label: 'Camera',
+        icon: ({ tintColor }) => 
+          <Icon name="ios-aperture-outline" size={32} color={tintColor} />,
+      },
+    },
+  },
+  Analytics: {
+    screen: Stack3,
+    navigationOptions: {
+      tabBar: {
+        label: 'Analytics',
+        icon: ({ tintColor }) => 
+          <Icon name="ios-analytics-outline" size={32} color={tintColor} />,
+      },
+    },
   },
 });
