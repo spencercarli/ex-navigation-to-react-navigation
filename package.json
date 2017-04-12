@@ -9,8 +9,10 @@
   "dependencies": {
     "@expo/ex-navigation": "^2.9.4",
     "babel-preset-react-native-stage-0": "^1.0.1",
+    "hoist-non-react-statics": "^1.2.0",
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.3",
+    "react-native-dropdownalert": "^2.7.0",
     "react-native-vector-icons": "^4.0.1",
     "react-navigation": "git+https://github.com/react-community/react-navigation.git"
   },
