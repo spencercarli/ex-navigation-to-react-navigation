@@ -20,16 +20,6 @@ class DrawerApp extends Component {
            id='home'
            renderTitle={isSelected => <DrawerRow title="Home" isSelected={isSelected} />}
          >
-           {/* TODO: Make sure all works on Android */}
-           {/*<StackNavigation
-             id='home'
-             initialRoute="screen1"
-             defaultRouteConfig={{
-                navigationBar: {
-                  tintColor: '#181819',
-                }
-              }}
-           />*/}
            <Stack1 />
          </DrawerNavigationItem>
 
