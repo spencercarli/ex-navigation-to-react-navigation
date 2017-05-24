@@ -20,10 +20,10 @@ const DrawerIcon = ({ navigate }) => {
   }
 
   return (
-    <Icon 
-      name="md-menu" 
-      size={28} 
-      color="black" 
+    <Icon
+      name="md-menu"
+      size={28}
+      color="black"
       onPress={() => navigate('DrawerOpen')}
       style={{ paddingLeft: 20 }}
     />
@@ -33,11 +33,9 @@ const DrawerIcon = ({ navigate }) => {
 export const Stack1 = StackNavigator({
   Screen1: {
     screen: Screen1,
-    navigationOptions: {
-      header: (props) => ({
-        left: <DrawerIcon {...props} />,
-      }),
-    },
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <DrawerIcon {...navigation} />,
+    }),
   },
   Screen2: {
     screen: Screen2,
@@ -50,11 +48,9 @@ export const Stack1 = StackNavigator({
 export const Stack2 = StackNavigator({
   Screen4: {
     screen: Screen4,
-    navigationOptions: {
-      header: (props) => ({
-        left: <DrawerIcon {...props} />,
-      }),
-    },
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <DrawerIcon {...navigation} />,
+    }),
   },
   Screen5: {
     screen: Screen5,
@@ -70,11 +66,9 @@ export const Stack2 = StackNavigator({
 export const Stack3 = StackNavigator({
   Screen8: {
     screen: Screen8,
-    navigationOptions: {
-      header: (props) => ({
-        left: <DrawerIcon {...props} />,
-      }),
-    },
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <DrawerIcon {...navigation} />,
+    }),
   },
   Screen9: {
     screen: Screen9,
@@ -90,7 +84,7 @@ export const Tabs = TabNavigator({
     navigationOptions: {
       tabBar: {
         label: 'Home',
-        icon: ({ tintColor }) => 
+        icon: ({ tintColor }) =>
           <Icon name="ios-albums-outline" size={32} color={tintColor} />,
       },
     },
@@ -100,7 +94,7 @@ export const Tabs = TabNavigator({
     navigationOptions: {
       tabBar: {
         label: 'Camera',
-        icon: ({ tintColor }) => 
+        icon: ({ tintColor }) =>
           <Icon name="ios-aperture-outline" size={32} color={tintColor} />,
       },
     },
@@ -110,7 +104,7 @@ export const Tabs = TabNavigator({
     navigationOptions: {
       tabBar: {
         label: 'Analytics',
-        icon: ({ tintColor }) => 
+        icon: ({ tintColor }) =>
           <Icon name="ios-analytics-outline" size={32} color={tintColor} />,
       },
     },
